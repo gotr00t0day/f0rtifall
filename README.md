@@ -27,14 +27,10 @@ Fortinet security scanner: FortiGate, FortiSIEM, and FortiClient EMS. Checks def
 |---------|-------------|
 | **Default Login Check** | Tests 13 default/weak credential pairs against FortiGate web UI and REST API |
 | **Session Verification** | Validates logins by hitting protected API endpoints to eliminate false positives |
-| **Maintainer Account** | Extracts serial numbers from HTML, headers, API, and SSL certs to test `maintainer:bcpb<serial>` |
-| **Nuclei Integration** | Runs Nuclei with product-specific tags and parses JSONL output with beautified display |
 | **FortiGate Fingerprinting** | Detects FortiGate panels via cookies, headers, SSL-VPN endpoints, and API |
 | **FortiSIEM Fingerprinting** | Detects FortiSIEM panels via page content and headers (parallelized) |
 | **FortiClient EMS Fingerprinting** | Detects FortiClient EMS via `/signin` page and version extraction |
 | **Multi-Port Expansion** | Raw IPs on 443, 8443, 10443 (FortiGate); 443, 8443 (FortiSIEM/FortiClient) |
-| **Thread-Safe Output** | Locked printing prevents output overlap during multi-threaded scans |
-| **Multiple Input Methods** | Single URL, file, or stdin piping from Shodan/other tools |
 
 ---
 
