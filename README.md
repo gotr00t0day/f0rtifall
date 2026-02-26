@@ -17,7 +17,6 @@ Fortinet security scanner: FortiGate, FortiSIEM, and FortiClient EMS. Checks def
 | Tool | Description |
 |------|-------------|
 | **forticheck.py** | FortiGate / FortiSIEM / FortiClient EMS scanner |
-| **apisn1p3r.py** | API recon & security testing ([APISN1P3R_README.md](APISN1P3R_README.md)) |
 | **FORTINET-PENTESTING-GUIDE.md** | FortiGate pivoting, proxy, VIP, cleanup |
 
 ---
