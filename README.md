@@ -78,81 +78,81 @@ usage: forticheck.py [-h] [-u URL] [-f FILE] [--stdin]
 
 ```bash
 # Single target
-python3 forticheck.py -u 10.0.0.1 -m login
+python3 f0rtifall.py -u 10.0.0.1 -m login
 
 # With specific port
-python3 forticheck.py -u 10.0.0.1 -p 8443 -m login
+python3 f0rtifall.py -u 10.0.0.1 -p 8443 -m login
 
 # File of targets
-python3 forticheck.py -f targets.txt -m login -t 20
+python3 f0rtifall.py -f targets.txt -m login -t 20
 
 # Custom credentials
-python3 forticheck.py -u 10.0.0.1 -m login -U users.txt -P passwords.txt
+python3 f0rtifall.py -u 10.0.0.1 -m login -U users.txt -P passwords.txt
 
 # Verbose (show failed attempts)
-python3 forticheck.py -f targets.txt -m login -t 10 -v
+python3 f0rtifall.py -f targets.txt -m login -t 10 -v
 ```
 
 ### Nuclei Vulnerability Scan
 
 ```bash
 # Scan targets for Fortinet CVEs
-python3 forticheck.py -f targets.txt -m vuln
+python3 f0rtifall.py -f targets.txt -m vuln
 
 # Critical severity only
-python3 forticheck.py -f targets.txt -m vuln --severity critical
+python3 f0rtifall.py -f targets.txt -m vuln --severity critical
 
 # Custom tags
-python3 forticheck.py -f targets.txt -m vuln --nuclei-tags fortigate,fortios
+python3 f0rtifall.py -f targets.txt -m vuln --nuclei-tags fortigate,fortios
 
 # Higher concurrency
-python3 forticheck.py -f targets.txt -m vuln --nuclei-concurrency 100
+python3 f0rtifall.py -f targets.txt -m vuln --nuclei-concurrency 100
 ```
 
 ### Full Scan (Login + Nuclei)
 
 ```bash
 # Both modes
-python3 forticheck.py -f targets.txt -m all -t 20
+python3 f0rtifall.py -f targets.txt -m all -t 20
 
 # JSON output
-python3 forticheck.py -f targets.txt -m all --json -o results.json
+python3 f0rtifall.py -f targets.txt -m all --json -o results.json
 ```
 
 ### FortiSIEM Mode
 
 ```bash
 # FortiSIEM fingerprinting + Nuclei vulnerability scan (fortisiem tag only)
-python3 forticheck.py -f fortisiem_hosts.txt -m fortisiem
+python3 f0rtifall.py -f fortisiem_hosts.txt -m fortisiem
 
 # With higher thread count for faster fingerprinting
-python3 forticheck.py -f fortisiem_hosts.txt -m fortisiem -t 25
+python3 f0rtifall.py -f fortisiem_hosts.txt -m fortisiem -t 25
 
 # Custom ports (default: 443, 8443)
-python3 forticheck.py -u https://siem.example.com -m fortisiem -p 443
+python3 f0rtifall.py -u https://siem.example.com -m fortisiem -p 443
 ```
 
 ### FortiClient EMS Mode
 
 ```bash
 # FortiClient EMS fingerprinting + Nuclei vulnerability scan (forticlient,fortinet tags)
-python3 forticheck.py -f ems_hosts.txt -m forticlient
+python3 f0rtifall.py -f ems_hosts.txt -m forticlient
 
 # Single target
-python3 forticheck.py -u https://ems.example.com -m forticlient
+python3 f0rtifall.py -u https://ems.example.com -m forticlient
 ```
 
 ### Piping from Other Tools
 
 ```bash
 # From Shodan
-shodan search 'ssl:"FortiGate"' --fields ip_str | python3 forticheck.py --stdin -m all
+shodan search 'ssl:"FortiGate"' --fields ip_str | python3 f0rtifall.py --stdin -m all
 
 # From a file
-cat ips.txt | python3 forticheck.py --stdin -m vuln -t 20
+cat ips.txt | python3 f0rtifall.py --stdin -m vuln -t 20
 
 # Pipe to other tools
-python3 forticheck.py -f targets.txt -m login --json -o results.json
+python3 f0rtifall.py -f targets.txt -m login --json -o results.json
 ```
 
 ---
