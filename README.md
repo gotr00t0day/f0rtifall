@@ -1,4 +1,4 @@
-# FortiCheck
+# f0rtifall
 
 Fortinet security scanner: FortiGate, FortiSIEM, and FortiClient EMS. Checks default credentials and known vulnerabilities via Nuclei.
 
